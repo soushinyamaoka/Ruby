@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "application" %>
+<div class="parent">
+  <%= render 'header/header' %>
+  <main class="section main">
+    <%= form_tag(search_path) do %>
+      <div class="cp_iptxt">
+        <label class="ef">
+          <%= text_field_tag :keyWord, nil, :placeholder => "キーワード(任意)" , value: params[:keyWord]%>
+        </label>
+      </div>
+      <div>
+        <%= submit_tag "検索", {class: "btn-custom"} %>
+      </div>
+    <% end %>
+    <div>
+      <% if !@kondateList.nil? -%>
+        <div>
+          <ul>
+            <% @kondateList.each do |kondate| %>
+              <li>
+                <a href=<%= kondate["link"] %>>
+                <div class="sample"><img src=<%= kondate["image"] %>></div>
+                <h5><%= kondate["title"] %></h5>
+                  <p><%= kondate["snippet"] %></p>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <% if @kondateList.nil? -%>
+      <% end %>
+    </div>
+  </main>
+  <%= render 'footer/footer' %>
+</div>

@@ -1,0 +1,46 @@
+<%= form_tag('/search', method: :post) do %>
+  <div class="cp_iptxt">
+    <label class="ef">
+      <%= text_field_tag :keyWord, nil, :placeholder => "キーワード(任意)" %>
+    </label>
+  </div>
+  <div>
+    <%= submit_tag "検索", {class: "btn-custom"} %>
+  </div>
+<% end %>
+<div>
+  <% if !@kondateList.nil? -%>
+    <div>bbb</div>
+    <% @kondateList.each do |kondate| %>
+      <p>aaa</p>
+    <% end %>
+  <% end %>
+  <% if @kondateList.nil? -%>
+    <div>cccc</div>
+  <% end %>
+  <div><%= @msg %></div>
+  <%# <div>
+    <ul>
+      <li>
+        <img src="http://sedoriplan.com/sample/css/images/012/spring.jpg">
+        <h3>スプリング</h3>
+        <p>春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。</p>
+      </li>
+      <li>
+        <img src="http://sedoriplan.com/sample/css/images/012/summer.jpg">
+        <h3>サマー</h3>
+        <p>春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。</p>
+      </li>
+      <li>
+        <img src="http://sedoriplan.com/sample/css/images/012/fall.jpg">
+        <h3>オータム</h3>
+        <p>春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。</p>
+      </li>
+      <li>
+        <img src="http://sedoriplan.com/sample/css/images/012/winter.jpg">
+        <h3>ウインター</h3>
+        <p>春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。春夏秋冬。今日は晴れです。明日は曇りです。明々後日は雨です。</p>
+      </li>
+    </ul>
+  </div> %>
+</div>
